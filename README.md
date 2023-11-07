@@ -1,32 +1,45 @@
-# CUDAatScaleForTheEnterpriseCourseProjectTemplate
-This is a template for the course project for the CUDA at Scale for the Enterprise
+# Image Undo Action
+This is a program which attempts to undo the last action taken on an image. It will examine whether the image has a corresponding
+origination image and then undo the action based on the name of the image. For example if a box filter was applied to an image, the
+name should reflect box_filter and then the program will look in the origination directory for an image without the box_filter in
+the name to determine the target to undo the transformation. It will then compare the undone image to the original image to determine
+whether the undo worked correctly.
 
 ## Project Description
 
-Beyond just being a template for course members, this project can be used by non-course members as the general structure for CUDA projects.
+I am beginning by just transforming the image from RGB to grayscale to determine whether the back and forth impacts the image.
 
 ## Code Organization
 
 ```bin/```
-This folder should hold all binary/executable code that is built automatically or manually. Executable code should have use the .exe extension or programming language-specific extension.
+This folder holds all binary/executable code built using the Makefile.
 
 ```data/```
-This folder should hold all example data in any format. If the original data is rather large or can be brought in via scripts, this can be left blank in the respository, so that it doesn't require major downloads when all that is desired is the code/structure.
+This folder contains the files used to make the program actually do something.
+
+```data/src_images/```
+These are images which were trnasformed into something else. They are only here for comparison purposes.
+
+```data/transformed_images/```
+These are the images after transformation. We will attempt to transform these back to the src_images.
+
+```data/undone_images/```
+These are the images which resulted from trying to undo the transformation which reviously occurred.
 
 ```lib/```
-Any libraries that are not installed via the Operating System-specific package manager should be placed here, so that it is easier for inclusion/linking.
+Extra libraries. This may disappear.
 
 ```src/```
 The source code should be placed here in a hierarchical fashion, as appropriate.
 
 ```README.md```
-This file should hold the description of the project so that anyone cloning or deciding if they want to clone this repository can understand its purpose to help with their decision.
+This file.
 
 ```INSTALL```
-This file should hold the human-readable set of instructions for installing the code so that it can be executed. If possible it should be organized around different operating systems, so that it can be done by as many people as possible with different constraints.
+This file explains how the executable expects to reside.
 
-```Makefile or CMAkeLists.txt or build.sh```
-There should be some rudimentary scripts for building your project's code in an automatic fashion.
+```Makefile```
+This is a standard Makefile for building and executing the code.
 
 ```run.sh```
 An optional script used to run your executable code, either with or without command-line arguments.
