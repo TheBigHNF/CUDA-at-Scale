@@ -17,7 +17,7 @@ This folder holds all binary/executable code built using the Makefile.
 ```data/```
 This folder contains the files used to make the program actually do something.
 
-```data/src_images/```
+```data/source_images/```
 These are images which were trnasformed into something else. They are only here for comparison purposes.
 
 ```data/transformed_images/```
@@ -27,7 +27,7 @@ These are the images after transformation. We will attempt to transform these ba
 These are the images which resulted from trying to undo the transformation which reviously occurred.
 
 ```lib/```
-Extra libraries. This may disappear.
+Extra libraries. This current contains the cuda-samples library.
 
 ```src/```
 The source code should be placed here in a hierarchical fashion, as appropriate.
